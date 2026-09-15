@@ -128,7 +128,7 @@ command_not_found_handler () {
     #VALUE=$((${RANDOM}%2))
 
     #if [[ ${VALUE} -lt 1 ]]; then
-    printf "$(tput bold)$(tput setaf 7)$(shuf -n 1 -e "${INSULTS[@]}")$(tput sgr0)"
+    printf '%s' "$(tput bold)$(tput setaf 7)$(shuf -n 1 -e "${INSULTS[@]}")$(tput sgr0)"
     #fi
     #no need to echo cmd not found, as zsh will do it by self already.
     #echo "SuperZSH: $1: command not found"
