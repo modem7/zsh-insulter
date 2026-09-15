@@ -6,7 +6,7 @@ Heavily based on [hkbakke's bash-insulter](https://github.com/hkbakke/bash-insul
 
 Edit the insults list as needed :)
 
-![zshInsults](https://github.com/NoobGajen/zsh-insulter/blob/master/zshInsultsgnu.png)
+<img width="592" height="196" alt="image" src="https://github.com/user-attachments/assets/76559e8b-8120-4cce-8abd-c8c6a7b13558" />
 
 ## Installation
 
