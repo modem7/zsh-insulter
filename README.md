@@ -10,6 +10,34 @@ Edit the insults list as needed :)
 
 ## Installation
 
+### Via a zsh plugin manager
+
+The repo ships a `zsh-insulter.plugin.zsh` entry point, so it works with any
+manager that follows the standard `<repo-name>.plugin.zsh` convention.
+
+**[Antidote](https://getantidote.github.io/)** — add to your `.zsh_plugins.txt`:
+```
+modem7/zsh-insulter
+```
+
+**Oh My Zsh** — clone into the custom plugins directory and enable it:
+```
+git clone https://github.com/modem7/zsh-insulter.git \
+  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-insulter
+```
+then add `zsh-insulter` to the `plugins=(...)` array in `~/.zshrc`.
+
+> **Note:** Oh My Zsh's own bundled `command-not-found` plugin hooks the same
+> `command_not_found_handler`. If you have both enabled, whichever loads last
+> wins — don't load both.
+
+**zinit / zi** — add to your `.zshrc`:
+```
+zinit light modem7/zsh-insulter
+```
+
+### Manual installation
+
 1. Clone the repo:
    ```
    git clone https://github.com/modem7/zsh-insulter.git ~/.zsh-insulter
