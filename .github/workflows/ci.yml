@@ -15,7 +15,7 @@ jobs:
     name: zsh -n (syntax)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - name: Install zsh
         run: sudo apt-get update && sudo apt-get install -y zsh
       - name: Check every source file parses
@@ -33,7 +33,7 @@ jobs:
     name: ShellCheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@2.0.0
         with:
@@ -44,7 +44,7 @@ jobs:
     name: Zizmor (Actions injection/security scan)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - name: Install zizmor
         run: pip install --break-system-packages --quiet zizmor
       - name: Scan workflows for injection and other security issues
