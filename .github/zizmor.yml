@@ -1,0 +1,19 @@
+rules:
+  # These repos consistently pin actions to tags, not commit hashes, and CI
+  # doesn't need to enforce the stricter supply-chain policy — this scan is
+  # scoped to catching injection risks (template-injection, dangerous
+  # triggers), not a full workflow-security overhaul.
+  unpinned-uses:
+    ignore:
+      - autoassign.yml
+      - autotag.yml
+      - ci.yml
+  artipacked:
+    ignore:
+      - autotag.yml
+      - ci.yml
+  excessive-permissions:
+    ignore:
+      - autoassign.yml
+      - autotag.yml
+      - ci.yml

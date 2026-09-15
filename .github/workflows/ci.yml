@@ -33,7 +33,17 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Run ShellCheck
-        uses: ludeeus/action-shellcheck@master
+        uses: ludeeus/action-shellcheck@2.0.0
         with:
           scandir: './src'
           shell: bash
+
+  zizmor:
+    name: Zizmor (Actions injection/security scan)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install zizmor
+        run: pip install --break-system-packages --quiet zizmor
+      - name: Scan workflows for injection and other security issues
+        run: zizmor --config .github/zizmor.yml .github/workflows
