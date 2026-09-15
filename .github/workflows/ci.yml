@@ -21,7 +21,7 @@ jobs:
       - name: Check every source file parses
         run: |
           fail=0
-          for f in src/*; do
+          for f in src/* zsh-insulter.plugin.zsh; do
             if ! zsh -n "$f"; then
               echo "::error file=$f::Syntax error"
               fail=1
