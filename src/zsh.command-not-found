@@ -123,17 +123,19 @@ command_not_found_handler () {
         "Even the shell's error handler needed a coffee break after that one."
     )
 
-    # Seed "random" generator
-    #RANDOM=$(date +%s%N)
-    #VALUE=$((${RANDOM}%2))
-
-    #if [[ ${VALUE} -lt 1 ]]; then
     printf '%s' "$(tput bold)$(tput setaf 7)$(shuf -n 1 -e "${INSULTS[@]}")$(tput sgr0)"
-    #fi
-    #no need to echo cmd not found, as zsh will do it by self already.
-    #echo "SuperZSH: $1: command not found"
     echo ""
 
     # Return the exit code normally returned on invalid command
     return 127
 }
+
+# Debian/Ubuntu's bash command-not-found integration calls
+# command_not_found_handle (no trailing "r"), not zsh's
+# command_not_found_handler — define both so this file works when sourced
+# from either shell, as the README's bash instructions expect.
+if [ -n "${BASH_VERSION:-}" ]; then
+    command_not_found_handle () {
+        command_not_found_handler "$@"
+    }
+fi
